@@ -301,6 +301,10 @@ def tokenize(text):
 
 def load_model(path):
     """Load a model given a filepath and return a model object."""
+    if path is None:
+        raise ValueError(
+            "Attempted to load model with None"
+        )
     return _FastText(path)
 
 
